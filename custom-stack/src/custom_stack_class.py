@@ -30,3 +30,15 @@ class CustomStack:
         if self.is_empty():
             raise StackEmptyException
         return self.elements[-1]
+
+class NumberAscOrder():
+    def sort(self, stack: CustomStack):
+        if stack.is_empty():
+            return []
+
+        lista = []
+        while not stack.is_empty():
+            dropado = stack.pop()
+            lista.append(dropado)
+        return sorted(lista)
+    

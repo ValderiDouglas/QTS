@@ -29,3 +29,18 @@ def test_top():
     with pytest.raises(StackEmptyException):
         cut.top()
     
+def test_sort_with_six_elements():
+    stack = CustomStack(6)
+    numeros = [45, 3, 12, 30, 7, 25]
+    for n in numeros:
+        stack.push(n)
+    
+    sorteio = NumberAscOrder()
+    result = sorteio.sort(stack)
+    assert result == sorted(numeros)
+
+def test_sort_with_empty_stack():
+    stack = CustomStack(6)
+    sorteio = NumberAscOrder()
+    result = sorteio.sort(stack)
+    assert result == []
